@@ -16,3 +16,6 @@ logs/
 
 #images
 image_dbt/
+
+#dbt generated files
+.user.yml
