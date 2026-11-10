@@ -1,12 +1,72 @@
-# Running dbt
+# 自動化職缺發布與數據分析專案
 
-From Git Bash at the repository root, run dbt commands through the project
-wrapper so dbt always loads the profile stored in `analytics/profiles.yml`:
+這個專案是一個以 dbt + DuckDB 為核心的資料轉換與分析專案，
+目標是將各種職缺資料匯集、清理、結構化，並建立穩定的分析流程，
+幫助企業更快速掌握人才市場、職缺分布與招募趨勢。
+
+
+## 這個專案做了什麼
+
+本專案採用三個核心能力來建立資料流程：
+
+1. 資料收集：匯入職缺相關原始資料
+2. 資料轉換：透過 dbt 將資料清理、轉型、建立邏輯模型
+3. 資料分析：在 DuckDB 中快速驗證與分析，提升運算效率與可維護性
+
+這樣的設計讓專案兼具「工程實作」與「商業應用」的特性，
+也非常適合作為資料工程、分析工程與自動化流程的示範案例。
+
+## 技術架構
+
+本專案使用的核心技術：
+
+- dbt：負責資料建模與轉換邏輯
+- DuckDB：輕量高效的分析資料庫，適合快速執行資料分析
+- Python：支援資料處理與自動化腳本
+- Git Bash / wrapper：確保 dbt 能正確讀取專案中的設定檔
+
+## 專案目錄
+
+- `analytics/`：dbt 專案內容與設定檔
+- `src/`：應用程式與資料處理邏輯
+- `data/`：原始資料或中間資料
+- `scripts/`：輔助腳本
+- `ci/`：持續整合相關設置
+
+## 執行方式
+
+在 repository root 使用 Git Bash 時，請透過專案提供的 wrapper 執行 dbt 指令，
+讓 dbt 總是載入位於 `analytics/profiles.yml` 的設定檔：
 
 ```bash
 bash analytics/dbt.sh debug
 bash analytics/dbt.sh test
 ```
 
-The wrapper switches to the analytics project directory, so the command also
-works when run from another current directory if you provide the wrapper path.
+這個 wrapper 會先切換到 `analytics` 專案目錄，因此即使你目前不在專案根目錄，
+只要提供 wrapper 的路徑，這些命令也能正常執行。
+
+範例：
+
+```bash
+bash /path/to/repo/analytics/dbt.sh debug
+```
+
+## 為什麼這個專案值得被看見
+
+從 HR 或業務角度來看，這個專案展現的是一種真正的「數據驅動招聘能力」：
+
+- 能處理大量且重複的招聘資料
+- 支持資料標準化與品質檢查
+- 可擴展成 dashboard、分析報告與自動化流程
+- 代表具備資料工程、分析思維與實務解決問題能力
+
+這類專案不只是技術展示，也能反映個人在資料整合、系統設計與流程優化上的能力，
+更符合現代企業對「能落地、能維運、能解決商業問題」人才的期待。
+
+## 結論
+
+這個專案旨在把職缺數據從原始資料轉成可運用的分析資產，
+同時展示資料工程與數據分析在招聘場景中的實際價值。
+
+它不只是一個 dbt 專案，更是一個具備商業意義的自動化資料流程解決方案。

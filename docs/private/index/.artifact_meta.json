@@ -1,0 +1,21 @@
+{
+  "target_dir": "E:\\coding\\dbt-duckdb-pipeline\\docs",
+  "fingerprints": {
+    "semantic_manifest.json": {
+      "size": 234,
+      "modified_secs": 1794315983
+    },
+    "run_results.json": {
+      "size": 346,
+      "modified_secs": 1794315983
+    },
+    "manifest.json": {
+      "size": 520614,
+      "modified_secs": 1794315983
+    }
+  },
+  "write_source": "DirectWrite",
+  "context_dir": null,
+  "context_fingerprints": {},
+  "source_identity": null
+}
