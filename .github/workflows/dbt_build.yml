@@ -1,4 +1,4 @@
-name: dbt build & publish
+name: dbt build & publish CI
 on:
   push:
     branches: [master]
